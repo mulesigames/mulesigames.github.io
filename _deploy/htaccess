@@ -1,0 +1,46 @@
+# Uploaded as public_html/.htaccess by _deploy/deploy.py (Natro cPanel hosting).
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+   php_value error_log "/home/u2913724/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+<IfModule lsapi_module>
+   php_value error_log "/home/u2913724/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Let AutoSSL / Let's Encrypt validation through untouched.
+RewriteRule ^\.well-known/ - [L]
+
+# www and alias domains (mulesigames.com.tr, mulesigames.xyz) -> mulesigames.com.
+# deploy.py writes {SCHEME} as https once mulesigames.com has a valid certificate, http before that.
+RewriteCond %{HTTP_HOST} !^mulesigames\.com$ [NC]
+RewriteCond %{HTTP_HOST} mulesigames\. [NC]
+RewriteRule ^ {SCHEME}://mulesigames.com%{REQUEST_URI} [R=301,L]
+
+# BEGIN force-https (deploy.py drops this block until the certificate is valid)
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://mulesigames.com%{REQUEST_URI} [R=301,L]
+# END force-https
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType text/css "access plus 1 day"
+ExpiresByType application/javascript "access plus 1 day"
+ExpiresByType text/html "access plus 10 minutes"
+</IfModule>
