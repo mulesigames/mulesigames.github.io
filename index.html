@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v=2">
 <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="tr"&&l!=="en")l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en";document.documentElement.className="lang-"+l;document.documentElement.lang=l})()</script>
 </head>
 <body>
@@ -38,37 +38,37 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="banner">
-      <img class="wide" src="/assets/img/banner.webp" alt="Mulesi Games" width="1672" height="941">
-      <img class="stacked" src="/assets/img/mulesi-logo.webp" alt="Mulesi Games" width="640" height="707">
-    </div>
-    <div class="hero-text">
+    <div class="hero-copy">
+      <span class="kicker"><span data-l="tr">Bağımsız mobil oyun stüdyosu</span><span data-l="en">Independent mobile game studio</span></span>
       <h1>
         <span data-l="tr">Cebine sığan, <em>elinden bırakamayacağın</em> oyunlar.</span>
         <span data-l="en">Pocket-sized games you <em>can't put down.</em></span>
       </h1>
-      <div class="side">
-        <p data-l="tr">Mulesi Games, kısa molalar için eğlenceli mobil oyunlar yapan bağımsız bir stüdyo. Öğrenmesi bir saniye, ustalaşması bir ömür.</p>
-        <p data-l="en">Mulesi Games is an independent studio making fun mobile games for short breaks. A second to learn, a lifetime to master.</p>
-        <div class="row">
-          <a class="btn btn-hot" href="#games"><span data-l="tr">Oyunlarımız</span><span data-l="en">Our games</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
-          <a class="btn btn-ghost" href="#contact"><span data-l="tr">Bize yaz</span><span data-l="en">Say hello</span></a>
-        </div>
+      <p data-l="tr">Mulesi Games, kısa molalar için eğlenceli mobil oyunlar yapan bağımsız bir stüdyo. Öğrenmesi bir saniye, ustalaşması bir ömür.</p>
+      <p data-l="en">Mulesi Games is an independent studio making fun mobile games for short breaks. A second to learn, a lifetime to master.</p>
+      <div class="row">
+        <a class="btn btn-hot" href="#games"><span data-l="tr">Oyunlarımız</span><span data-l="en">Our games</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a class="btn btn-ghost" href="#contact"><span data-l="tr">Bize yaz</span><span data-l="en">Say hello</span></a>
       </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun" data-parallax="-0.08"></div>
+      <img class="mascot" src="/assets/img/mascot-hero.webp" alt="" width="483" height="430" data-parallax="0.06">
+      <span class="ball" data-parallax="-0.22"></span>
     </div>
   </div>
 </section>
 
 <section id="games">
   <div class="wrap">
-    <span class="kicker"><span data-l="tr">Oyunlar</span><span data-l="en">Games</span></span>
-    <h2 class="title"><span data-l="tr">Oyunlarımız</span><span data-l="en">Our games</span></h2>
+    <span class="kicker" data-reveal><span data-l="tr">Oyunlar</span><span data-l="en">Games</span></span>
+    <h2 class="title" data-reveal style="--i:1"><span data-l="tr">Oyunlarımız</span><span data-l="en">Our games</span></h2>
 
     <div class="games">
-      <article class="game">
+      <article class="game" data-reveal>
         <a class="art" href="/dontdrop/" aria-label="Don't Drop the Ball!">
-          <img src="/dontdrop/img/splash.webp" alt="" width="941" height="1672" loading="lazy">
+          <img data-parallax="-0.04" src="/dontdrop/img/splash.webp" alt="" width="941" height="1672" loading="lazy">
         </a>
         <div class="info">
           <div class="head">
@@ -102,7 +102,7 @@
         </div>
       </article>
 
-      <div class="next">
+      <div class="next" data-reveal="left">
         <img src="/assets/img/mascot.webp" alt="" width="72" height="72" loading="lazy">
         <div>
           <h3><span data-l="tr">Sıradaki oyun yolda</span><span data-l="en">The next game is on its way</span></h3>
@@ -116,25 +116,25 @@
 
 <section id="studio">
   <div class="wrap">
-    <span class="kicker"><span data-l="tr">Stüdyo</span><span data-l="en">Studio</span></span>
-    <h2 class="title"><span data-l="tr">Nasıl oyun yapıyoruz?</span><span data-l="en">How we make games</span></h2>
-    <p class="lead" data-l="tr">Tek elle oynanan, birkaç dakikada keyif veren ve her denemede "bir daha" dedirten oyunlar seviyoruz.</p>
-    <p class="lead" data-l="en">We love games you can play with one hand, that are fun in a few minutes and make you say "one more try".</p>
+    <span class="kicker" data-reveal><span data-l="tr">Stüdyo</span><span data-l="en">Studio</span></span>
+    <h2 class="title" data-reveal style="--i:1"><span data-l="tr">Nasıl oyun yapıyoruz?</span><span data-l="en">How we make games</span></h2>
+    <p class="lead" data-reveal style="--i:2" data-l="tr">Tek elle oynanan, birkaç dakikada keyif veren ve her denemede "bir daha" dedirten oyunlar seviyoruz.</p>
+    <p class="lead" data-reveal style="--i:2" data-l="en">We love games you can play with one hand, that are fun in a few minutes and make you say "one more try".</p>
 
     <div class="values">
-      <div class="value">
+      <div class="value" data-reveal style="--i:0">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.5a6.5 6.5 0 0 1-6.5 6.5h-.6a6 6 0 0 1-4.6-2.2L4.4 15a1.6 1.6 0 0 1 2.4-2.1L9 15"/></svg></div>
         <h3><span data-l="tr">Tek dokunuş</span><span data-l="en">One tap</span></h3>
         <p data-l="tr">Kurallar bir saniyede anlaşılır. Gerisi refleks, sabır ve biraz da cesaret.</p>
         <p data-l="en">The rules click in a second. The rest is reflexes, patience and a little nerve.</p>
       </div>
-      <div class="value">
+      <div class="value" data-reveal style="--i:1">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 21V7M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg></div>
         <h3><span data-l="tr">Adil ve ücretsiz</span><span data-l="en">Fair and free</span></h3>
         <p data-l="tr">Oyunlarımız ücretsiz. Ödüllü reklamları izleyip izlememek senin seçimin; istersen zorunlu reklamları tamamen kaldırabilirsin.</p>
         <p data-l="en">Our games are free. Rewarded ads are always your choice, and you can remove forced ads entirely.</p>
       </div>
-      <div class="value">
+      <div class="value" data-reveal style="--i:2">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3><span data-l="tr">Gizliliğe saygı</span><span data-l="en">Privacy first</span></h3>
         <p data-l="tr">Hesap açmak gerekmez. İlerlemen cihazında kalır, kişisel bilgilerini istemeyiz.</p>
@@ -146,7 +146,7 @@
 
 <section id="contact">
   <div class="wrap">
-    <div class="contact">
+    <div class="contact" data-reveal>
       <div>
         <span class="kicker"><span data-l="tr">İletişim</span><span data-l="en">Contact</span></span>
         <h2 class="title"><span data-l="tr">Merhaba de!</span><span data-l="en">Say hello!</span></h2>
@@ -174,6 +174,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v=2" defer></script>
 </body>
 </html>

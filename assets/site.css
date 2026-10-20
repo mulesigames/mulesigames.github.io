@@ -137,21 +137,25 @@ section { padding: 72px 0; }
 
 /* ------------------------------------------------------------------ studio hero */
 
-.hero { padding: 28px 0 40px; }
-.banner {
-  position: relative; border-radius: 34px; overflow: hidden;
-  box-shadow: 0 40px 120px -40px rgba(255, 110, 10, 0.55), 0 0 0 1px rgba(255, 150, 60, 0.14);
-  aspect-ratio: 1672 / 941;
-  background: #0b0604;
-}
-.banner img { width: 100%; height: 100%; object-fit: cover; }
-.banner::after { content: ""; position: absolute; inset: auto 0 0 0; height: 30%; background: linear-gradient(180deg, transparent, rgba(10, 6, 4, 0.75)); pointer-events: none; }
-.banner .stacked { display: none; }
-.hero-text { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: end; margin-top: 40px; }
-.hero h1 { font-size: clamp(38px, 6vw, 68px); font-weight: 800; }
+.hero { padding: 40px 0 24px; }
+.hero .wrap { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 40px; align-items: center; }
+.hero h1 { font-size: clamp(38px, 5.6vw, 66px); font-weight: 800; margin-bottom: 18px; }
 .hero h1 em { font-style: normal; background: linear-gradient(180deg, var(--orange-2), var(--deep)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero .side p { color: var(--muted); font-size: 18px; }
-.hero .side .row { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-copy > p { color: var(--muted); font-size: 18px; max-width: 540px; }
+.hero .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+
+.hero-art { position: relative; justify-self: center; width: min(360px, 100%); aspect-ratio: 483 / 430; }
+.hero-art .sun {
+  position: absolute; inset: -18% -14% -6%; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 150, 40, 0.55), rgba(255, 110, 10, 0.18) 60%, transparent);
+  filter: blur(8px);
+}
+.hero-art .mascot { position: relative; width: 100%; height: auto; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55)); }
+.hero-art .ball {
+  position: absolute; width: 34px; height: 34px; right: 2%; top: 4%; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #fff3d6, var(--orange-2) 30%, var(--orange) 60%, var(--deep));
+  box-shadow: 0 10px 24px -4px rgba(255, 120, 20, 0.7);
+}
 
 /* ------------------------------------------------------------------ game cards */
 
@@ -279,7 +283,9 @@ footer a:hover { color: var(--cream); }
 
 @media (max-width: 860px) {
   .nav { display: none; }
-  .hero-text { grid-template-columns: 1fr; gap: 18px; margin-top: 28px; }
+  .hero { padding-top: 24px; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 8px; }
+  .hero-art { grid-row: 1; width: min(230px, 62%); }
   .game { grid-template-columns: 1fr; }
   .game .art { aspect-ratio: 16 / 10; }
   .game .info { padding: 26px 22px 28px; }
@@ -291,12 +297,87 @@ footer a:hover { color: var(--cream); }
 }
 @media (max-width: 600px) {
   body { font-size: 16px; }
-  .banner { aspect-ratio: auto; border-radius: 28px; padding: 34px 0 26px; background: radial-gradient(420px 300px at 50% 30%, rgba(255, 128, 20, 0.45), transparent 70%), #0b0604; }
-  .banner .wide { display: none; }
-  .banner .stacked { display: block; width: 74%; height: auto; margin: 0 auto; object-fit: contain; }
-  .banner::after { display: none; }
   .brand b { font-size: 23px; }
   .brand img { width: 38px; height: 38px; }
   .shots img { width: 200px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+
+/* ------------------------------------------------------------------ motion
+   Only when the visitor hasn't asked for reduced motion. Scroll reveals are armed by site.js
+   (html[data-motion]) so the page is fully visible without JavaScript. */
+
+/* scroll progress along the bottom of the header, with a ball riding the tip */
+.progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; pointer-events: none; }
+.progress i {
+  position: absolute; inset: 0; transform-origin: 0 50%; transform: scaleX(var(--p, 0));
+  background: linear-gradient(90deg, var(--deep), var(--orange), var(--orange-2));
+}
+.progress b {
+  position: absolute; top: -5px; left: calc(var(--p, 0) * 100% - 13px); width: 13px; height: 13px; border-radius: 50%;
+  transform: rotate(calc(var(--p, 0) * 1440deg));
+  background: radial-gradient(circle at 35% 30%, #fff3d6, var(--orange-2) 35%, var(--deep));
+  box-shadow: 0 0 12px rgba(255, 140, 30, 0.8);
+  opacity: min(1, calc(var(--p, 0) * 40));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .top .wrap, .brand img, .brand b { transition: height 0.3s ease, width 0.3s ease, font-size 0.3s ease, transform 0.4s ease; }
+  .top { transition: background 0.3s ease, box-shadow 0.3s ease; }
+  .top.scrolled { background: rgba(10, 6, 4, 0.94); box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.8); }
+  .top.scrolled .wrap { height: 56px; }
+  .top.scrolled .brand img { width: 36px; height: 36px; transform: rotate(-8deg); }
+  .top.scrolled .brand b { font-size: 23px; }
+
+  /* hero plays once on load */
+  .hero-copy > * { animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .hero-copy > :nth-child(2) { animation-delay: 0.08s; }
+  .hero-copy > :nth-child(3), .hero-copy > :nth-child(4) { animation-delay: 0.16s; }
+  .hero-copy > :nth-child(5) { animation-delay: 0.24s; }
+  .hero-art { animation: pop 0.9s cubic-bezier(0.2, 1.4, 0.4, 1) 0.15s both; }
+  .hero-art .mascot { animation: float 6s ease-in-out infinite; }
+  .hero-art .sun { animation: glow 4s ease-in-out infinite alternate; }
+  .hero-art .ball { animation: bounce 1.6s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate; }
+  [data-parallax] { translate: 0 var(--py, 0px); }
+
+  /* scroll reveals */
+  html[data-motion] [data-reveal] {
+    opacity: 0; transform: translateY(36px) scale(0.98);
+    transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: calc(var(--i, 0) * 0.1s);
+  }
+  html[data-motion] [data-reveal="left"] { transform: translateX(-48px); }
+  html[data-motion] [data-reveal="right"] { transform: translateX(48px); }
+  html[data-motion] [data-reveal].in { opacity: 1; transform: none; }
+
+  html[data-motion] .kicker::before { width: 0; transition: width 0.6s ease 0.2s; }
+  html[data-motion] .in .kicker::before, html[data-motion] .kicker.in::before, html .hero .kicker::before { width: 26px; }
+  html[data-motion] .value .ic { transform: scale(0.3) rotate(-30deg); transition: transform 0.6s cubic-bezier(0.2, 1.6, 0.4, 1) calc(var(--i, 0) * 0.1s + 0.2s); }
+  html[data-motion] .value.in .ic { transform: none; }
+  .value { transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease; }
+  .value:hover { transform: translateY(-6px) rotate(-0.6deg); border-color: var(--line-hi); background: var(--card-hi); }
+  .value:hover .ic { animation: wiggle 0.5s ease; }
+  html[data-motion] .next.in img { animation: peek 2.4s ease-in-out 0.4s infinite; }
+
+  .game .art { overflow: hidden; }
+  .game .art img { transform: scale(1.08); transform-origin: 50% 30%; transition: transform 0.6s ease; }
+  .game:hover .art img { transform: scale(1.12); }
+  .game .head img { transition: transform 0.3s cubic-bezier(0.2, 1.6, 0.4, 1); }
+  .game:hover .head img { transform: rotate(-6deg) scale(1.06); }
+
+  .contact::before {
+    content: ""; position: absolute; width: 320px; height: 320px; right: -80px; top: -120px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(255, 150, 40, 0.45), transparent); animation: glow 5s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+  .contact > * { position: relative; }
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } }
+@keyframes pop { from { opacity: 0; transform: scale(0.7) rotate(-6deg); } }
+@keyframes float { 50% { transform: translateY(-12px) rotate(1.5deg); } }
+@keyframes glow { from { opacity: 0.7; transform: scale(0.94); } to { opacity: 1; transform: scale(1.06); } }
+@keyframes bounce { from { transform: translateY(0) scale(1.08, 0.9); } 18% { transform: translateY(-6px) scale(1); } to { transform: translateY(-64px); } }
+@keyframes wiggle { 25% { transform: rotate(-12deg); } 75% { transform: rotate(10deg); } }
+@keyframes peek { 0%, 70%, 100% { transform: none; } 80% { transform: translateY(-8px) rotate(-8deg); } 90% { transform: translateY(-4px) rotate(6deg); } }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } .progress b { display: none; } }
