@@ -22,7 +22,7 @@ WEBROOT = "public_html"
 SITE = "mulesigames.com"
 
 # Not part of the site (GitHub Pages only, or deploy tooling).
-LOCAL_SKIP = ("_deploy/", ".nojekyll", "CNAME", "README")
+LOCAL_SKIP = ("_deploy/", ".github/", ".nojekyll", "CNAME", "README")
 # Hosting files that belong to cPanel, never deleted.
 REMOTE_KEEP = (".user.ini", "php.ini", ".well-known", "cgi-bin", ".ftpquota")
 

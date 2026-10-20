@@ -29,6 +29,9 @@ RewriteCond %{HTTP_HOST} !^mulesigames\.com$ [NC]
 RewriteCond %{HTTP_HOST} mulesigames\. [NC]
 RewriteRule ^ {SCHEME}://mulesigames.com%{REQUEST_URI} [R=301,L]
 
+# Old URLs that stores and shipped builds still use.
+RewriteRule ^privacy\.html$ https://mulesigames.com/dontdrop/privacy/ [R=301,L]
+
 # BEGIN force-https (deploy.py drops this block until the certificate is valid)
 # HTTPS ends at Cloudflare (SSL mode "Flexible"): the origin only sees plain http, so check the
 # proxy header. Natro's port 443 serves cPanel's default page for this domain, so "Full" won't work.
