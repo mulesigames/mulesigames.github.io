@@ -15,7 +15,8 @@ import ssl
 import subprocess
 import sys
 
-HOST = "ftp.mulesigames.com"
+HOST = "ftp.mulesigames.com"  # keychain item name
+SERVER = "94.73.144.194"  # Natro cPanel server; by IP so Cloudflare DNS can't get in the way
 USER = "deploy@mulesigames.com"
 WEBROOT = "public_html"
 SITE = "mulesigames.com"
@@ -59,7 +60,7 @@ def connect():
     # Shared host presents *.srvpanel.com, not ftp.mulesigames.com.
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
-    ftp = ftplib.FTP_TLS(HOST, context=ctx, timeout=60)
+    ftp = ftplib.FTP_TLS(SERVER, context=ctx, timeout=60)
     ftp.login(USER, password())
     ftp.prot_p()
     return ftp
