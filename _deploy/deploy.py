@@ -40,8 +40,9 @@ def local_files():
 
 
 def https_ready():
-    # curl uses the macOS trust store; a failed handshake means AutoSSL hasn't issued the cert yet.
-    r = subprocess.run(["curl", "-s", "-o", "/dev/null", "-m", "15", f"https://{SITE}/"])
+    # Public DNS (not the Mac's cache) so we test what visitors get; a failed handshake = no valid cert yet.
+    r = subprocess.run(["curl", "-s", "-o", "/dev/null", "-m", "15",
+                        "--doh-url", "https://1.1.1.1/dns-query", f"https://{SITE}/"])
     return r.returncode == 0
 
 
