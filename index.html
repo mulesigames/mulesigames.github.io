@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mulesi Games</title>
-<meta name="description" content="Mulesi Games is an independent mobile game studio. Pocket-sized games you can't put down, like Don't Drop the Ball!">
+<meta name="description" content="Mulesi Games is an independent mobile game studio. Pocket-sized games you can't put down, like Shoot to Crush! and Don't Drop the Ball!">
 <meta name="theme-color" content="#0a0604">
 <meta property="og:title" content="Mulesi Games">
 <meta property="og:description" content="Pocket-sized games you can't put down.">
@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=2">
+<link rel="stylesheet" href="/assets/site.css?v=3">
 <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="tr"&&l!=="en")l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en";document.documentElement.className="lang-"+l;document.documentElement.lang=l})()</script>
 </head>
 <body>
@@ -22,8 +22,8 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/" aria-label="Mulesi Games">
-      <img src="/assets/img/mascot.webp" alt="" width="44" height="44">
-      <span><b>mulesi<i>.</i></b><small>GAMES</small></span>
+      <!-- ana sayfa: hero'daki büyük logo kaydırınca küçülüp buraya yerleşir (site.js) -->
+      <span class="dock" aria-hidden="true"></span>
     </a>
     <nav class="nav">
       <a href="#games"><span data-l="tr">Oyunlar</span><span data-l="en">Games</span></a>
@@ -52,10 +52,8 @@
         <a class="btn btn-ghost" href="#contact"><span data-l="tr">Bize yaz</span><span data-l="en">Say hello</span></a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="sun" data-parallax="-0.08"></div>
-      <img class="mascot" src="/assets/img/mascot-hero.webp" alt="" width="483" height="430" data-parallax="0.06">
-      <span class="ball" data-parallax="-0.22"></span>
+    <div class="hero-art hero-logo-box">
+      <img class="hero-logo" src="/assets/img/mulesi-logo.webp" alt="Mulesi Games" width="640" height="707">
     </div>
   </div>
 </section>
@@ -66,6 +64,42 @@
     <h2 class="title" data-reveal style="--i:1"><span data-l="tr">Oyunlarımız</span><span data-l="en">Our games</span></h2>
 
     <div class="games">
+      <article class="game" data-reveal>
+        <a class="art" href="/shoottocrush/" aria-label="Shoot to Crush!">
+          <img data-parallax="-0.04" src="/shoottocrush/img/splash.webp" alt="" width="941" height="1672" loading="lazy">
+        </a>
+        <div class="info">
+          <div class="head">
+            <img src="/shoottocrush/img/icon.webp" alt="" width="76" height="76" loading="lazy">
+            <div>
+              <h3>Shoot to Crush!</h3>
+              <div class="tag"><span data-l="tr">Şut çek, blokları patlat!</span><span data-l="en">Football block-pop puzzle</span></div>
+            </div>
+          </div>
+          <ul class="chips">
+            <li><span data-l="tr">Bulmaca</span><span data-l="en">Puzzle</span></li>
+            <li><span data-l="tr">Ücretsiz</span><span data-l="en">Free</span></li>
+            <li>iPhone · Android</li>
+          </ul>
+          <p data-l="tr">Topu ger, nişan al, şut çek: vurduğun bloğa değen aynı renkli bütün bloklar patlar. Kaleciyi atlat, barajın üstünden aşırt, mahalle sahasından büyük lige 300 seviyelik bir sezon oyna.</p>
+          <p data-l="en">Pull back, aim and shoot: every same-colored block touching the one you hit pops with it. Beat the keeper, chip it over the wall and play a 300-level season from the street to the big league.</p>
+          <div class="actions">
+            <a class="btn btn-hot" href="/shoottocrush/"><span data-l="tr">Oyunu keşfet</span><span data-l="en">See the game</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <div class="stores">
+              <span class="store soon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10.5 18.5h3"/></svg>
+                <span><span data-l="tr">Yakında</span><span data-l="en">Coming soon</span><b>App Store</b></span>
+              </span>
+              <span class="store soon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.87l14-8.5a1 1 0 0 0 0-1.74l-14-8.5A1 1 0 0 0 5 3.5z"/></svg>
+                <span><span data-l="tr">Yakında</span><span data-l="en">Coming soon</span><b>Google Play</b></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+
       <article class="game" data-reveal>
         <a class="art" href="/dontdrop/" aria-label="Don't Drop the Ball!">
           <img data-parallax="-0.04" src="/dontdrop/img/splash.webp" alt="" width="941" height="1672" loading="lazy">
@@ -167,6 +201,7 @@
   <div class="wrap">
     <span>© <span data-year>2026</span> Mulesi Games</span>
     <div class="links">
+      <a href="/shoottocrush/">Shoot to Crush!</a>
       <a href="/dontdrop/">Don't Drop the Ball!</a>
       <a href="/dontdrop/#support"><span data-l="tr">Destek</span><span data-l="en">Support</span></a>
       <a href="/dontdrop/privacy/"><span data-l="tr">Gizlilik</span><span data-l="en">Privacy</span></a>
@@ -174,6 +209,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=2" defer></script>
+<script src="/assets/site.js?v=3" defer></script>
 </body>
 </html>
