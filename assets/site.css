@@ -122,6 +122,8 @@ p { margin: 0 0 1em; }
 .store span { display: block; font-size: 11px; color: rgba(255, 255, 255, 0.7); font-weight: 700; }
 .store b { display: block; font-size: 16px; font-family: var(--display); font-weight: 700; }
 .store.soon { opacity: 0.85; }
+a.store { transition: transform 0.15s, border-color 0.15s; }
+a.store:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.5); }
 
 /* ------------------------------------------------------------------ sections */
 
