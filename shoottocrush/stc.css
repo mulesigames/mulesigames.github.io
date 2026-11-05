@@ -1,0 +1,166 @@
+/* Shoot to Crush! sayfası: oyunun arayüzü. Baloo 2 ExtraBold, kraliyet mavisi pencereler, krem kartlar,
+   lacivert yazı, sarı ve yeşil "tok" düğmeler. Yalnız /shoottocrush/ yükler; site.css'in üstüne yazar. */
+
+:root {
+  --bg: #0d2766;
+  --bg-2: #123182;
+  --blue: #2f6fe0;
+  --blue-2: #1e5fd6;
+  --blue-edge: #0e3d99;
+  --navy: #16244f;
+  --navy-2: #3a4766;
+  --panel: #fff8ea;
+  --card: rgba(255, 255, 255, 0.06);
+  --card-hi: rgba(255, 255, 255, 0.1);
+  --line: rgba(160, 196, 255, 0.22);
+  --line-hi: rgba(160, 196, 255, 0.45);
+  --cream: #ffffff;
+  --muted: #cbd9ff;
+  --dim: #9fb3e6;
+  --orange: #ffc21a;
+  --orange-2: #ffe14d;
+  --deep: #f08a1c;
+  --ink: #16244f;
+  --green: #4fc63a;
+  --green-edge: #22751c;
+  --display: "Baloo 2", system-ui, sans-serif;
+  --body: "Baloo 2", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* oyundaki beyaz yazının lacivert konturu ve alt gölgesi (UiKit Style.Title) */
+  --outline: -2px -2px 0 #1240a8, 2px -2px 0 #1240a8, -2px 2px 0 #1240a8, 2px 2px 0 #1240a8,
+    0 -2px 0 #1240a8, 0 2px 0 #1240a8, -2px 0 0 #1240a8, 2px 0 0 #1240a8, 0 5px 0 #0a1e5a;
+}
+
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(900px 520px at 85% -10%, rgba(120, 180, 255, 0.35), transparent 70%),
+    radial-gradient(800px 480px at -10% 40%, rgba(47, 111, 224, 0.35), transparent 70%),
+    linear-gradient(180deg, #1a48b8 0%, var(--bg) 55%, #0a1f55 100%);
+  font-weight: 600;
+  line-height: 1.55;
+}
+::selection { background: var(--orange-2); color: var(--navy); }
+a { color: var(--orange-2); }
+
+/* ------------------------------------------------------------------ header */
+
+.top {
+  background: linear-gradient(180deg, rgba(18, 48, 126, 0.96), rgba(14, 39, 102, 0.88));
+  border-bottom: 3px solid var(--blue-edge);
+}
+.nav a { color: var(--muted); font-weight: 800; }
+.nav a:hover { color: #fff; }
+.lang { background: rgba(0, 0, 0, 0.18); border: 2px solid var(--blue-edge); }
+.lang button { font-family: var(--display); color: var(--muted); }
+.lang-tr .lang [data-set="tr"], .lang-en .lang [data-set="en"] {
+  background: linear-gradient(180deg, var(--orange-2), var(--orange)); color: var(--navy);
+}
+
+/* ------------------------------------------------------------------ başlıklar */
+
+.kicker {
+  padding: 4px 16px 3px; border-radius: 14px;
+  background: linear-gradient(180deg, #4d87ee, var(--blue-2));
+  border: 3px solid var(--blue-edge); box-shadow: 0 4px 0 rgba(6, 22, 70, 0.6);
+  color: #fff; font-weight: 800; font-size: 13px; letter-spacing: 0.16em;
+  text-shadow: 0 2px 0 var(--blue-edge);
+}
+.kicker::before { display: none; }
+.title { color: #fff; text-shadow: var(--outline); margin-top: 6px; margin-bottom: 18px; letter-spacing: 0; }
+.lead { color: var(--muted); }
+
+/* ------------------------------------------------------------------ hero (gökyüzü ve çim) */
+
+.g-hero {
+  background: linear-gradient(180deg, #5fb2f2 0%, #a3d6fb 40%, #e3f2ff 66%, #9fdc6e 88%, #5fbf3f 100%);
+  border: 4px solid var(--blue-2);
+  box-shadow: 0 0 0 4px var(--blue-edge), 0 12px 0 4px rgba(6, 22, 70, 0.55), 0 40px 120px -40px rgba(120, 200, 255, 0.6);
+}
+.g-hero .say { color: var(--navy); }
+.g-hero p { color: var(--navy-2); font-weight: 700; }
+.g-hero .chips li {
+  background: var(--panel); color: var(--navy); border: 2px solid var(--blue-2);
+  box-shadow: 0 3px 0 rgba(14, 61, 153, 0.35);
+}
+
+.chips li { font-family: var(--display); font-weight: 800; }
+
+/* ------------------------------------------------------------------ düğmeler */
+
+.btn { font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: 0.02em; }
+.btn-hot {
+  color: #fff; border-radius: 22px; padding: 15px 28px 13px;
+  background: linear-gradient(180deg, #8de86c 0%, var(--green) 52%, #3aa82d 100%);
+  border: 3px solid var(--green-edge);
+  box-shadow: 0 6px 0 var(--green-edge), 0 14px 26px -10px rgba(0, 0, 0, 0.5), inset 0 3px 0 rgba(255, 255, 255, 0.35);
+  text-shadow: 0 2px 0 var(--green-edge), 1px 0 0 var(--green-edge), -1px 0 0 var(--green-edge);
+}
+.btn-hot:hover {
+  color: #fff;
+  box-shadow: 0 8px 0 var(--green-edge), 0 18px 30px -10px rgba(0, 0, 0, 0.55), inset 0 3px 0 rgba(255, 255, 255, 0.35);
+}
+.btn-hot:active { transform: translateY(3px); box-shadow: 0 3px 0 var(--green-edge), inset 0 3px 0 rgba(255, 255, 255, 0.35); }
+
+.store { border-radius: 16px; border: 2px solid rgba(255, 255, 255, 0.25); box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35); }
+
+/* ------------------------------------------------------------------ ekran görüntüleri */
+
+.shots { scrollbar-color: var(--orange) transparent; }
+.shots img {
+  border: 4px solid #fff; border-radius: 26px;
+  box-shadow: 0 8px 0 rgba(6, 22, 70, 0.55), 0 24px 50px -20px rgba(0, 0, 0, 0.8);
+}
+
+/* ------------------------------------------------------------------ özellik kartları (oyundaki pencereler) */
+
+.value {
+  background: var(--panel); color: var(--navy);
+  border: 4px solid var(--blue); border-radius: 24px;
+  box-shadow: 0 0 0 3px var(--blue-edge), 0 9px 0 3px rgba(6, 22, 70, 0.55);
+}
+.value .ic {
+  border-radius: 50%; color: var(--navy);
+  background: linear-gradient(180deg, #fff27a, #ffd23a 45%, #ffae1a);
+  border: 3px solid #c97a00; box-shadow: 0 4px 0 #c97a00;
+}
+.value h3 { color: var(--blue-2); }
+.value p { color: var(--navy-2); }
+
+/* ------------------------------------------------------------------ SSS */
+
+.faq details {
+  background: var(--panel); border: 4px solid var(--blue); border-radius: 20px;
+  box-shadow: 0 0 0 3px var(--blue-edge), 0 7px 0 3px rgba(6, 22, 70, 0.55);
+}
+.faq details[open] { background: #fff; border-color: var(--blue); }
+.faq summary { color: var(--navy); font-family: var(--display); font-size: 18px; align-items: center; }
+.faq summary::after {
+  flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+  font-size: 22px; font-weight: 800; color: var(--navy);
+  background: linear-gradient(180deg, #fff27a, #ffc21a); border: 2px solid #c97a00;
+}
+.faq details p { color: var(--navy-2); }
+.faq details b { color: var(--navy); }
+
+/* ------------------------------------------------------------------ iletişim */
+
+.contact {
+  background: radial-gradient(500px 260px at 100% 0%, rgba(255, 225, 77, 0.28), transparent 70%),
+    linear-gradient(180deg, #3d7ce8, var(--blue-2));
+  border: 4px solid #6a9cf2; border-radius: 30px;
+  box-shadow: 0 0 0 4px var(--blue-edge), 0 10px 0 4px rgba(6, 22, 70, 0.55);
+}
+.contact .kicker { background: linear-gradient(180deg, var(--orange-2), var(--orange)); border-color: #c97a00; color: var(--navy); text-shadow: none; }
+.contact p { color: #e3ecff; }
+.contact .mail { color: #fff; text-shadow: 0 2px 0 var(--blue-edge); }
+
+/* ------------------------------------------------------------------ alt bilgi: saha çizgili çim */
+
+footer {
+  border-top: 4px solid #fff;
+  background: repeating-linear-gradient(90deg, #3f9d35 0 70px, #4aad3f 70px 140px);
+  color: #fff;
+}
+footer .wrap { color: #eaffe0; }
+footer a { color: #fff; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
+footer a:hover { color: var(--orange-2); }
