@@ -1,9 +1,14 @@
 // Language switch: the choice is remembered on this device; the first visit follows the browser.
 (function () {
   function set(l) {
-    document.documentElement.className = "lang-" + l;
-    document.documentElement.lang = l;
+    // swap only the language class: html also carries state such as "flying" (the docking logo)
+    var root = document.documentElement;
+    root.classList.remove("lang-tr", "lang-en");
+    root.classList.add("lang-" + l);
+    root.lang = l;
     try { localStorage.setItem("lang", l); } catch (e) {}
+    // the other language's text can move things: let the scroll effects measure again
+    window.dispatchEvent(new Event("resize"));
   }
   document.querySelectorAll(".lang [data-set]").forEach(function (b) {
     b.addEventListener("click", function () { set(b.getAttribute("data-set")); });
