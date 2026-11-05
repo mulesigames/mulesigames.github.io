@@ -1,0 +1,199 @@
+/* 3 Force 5 page in the game's own look: the midnight table (the default dark table), the logo's pink,
+   yellow and cyan, the neon pink-to-cyan frame of the store screenshots, cream playing cards, the gold coin
+   and Poppins like the game's UI. Colours come from the game's Palette (UI/UiKit.cs: Midnight table, Logo*,
+   Players, suit colours, coin rim). The studio header stays as on every page. Loaded after site.css,
+   scoped to body.f5. */
+
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url(/threeforcefive/fonts/poppins-600.woff) format("woff"); }
+@font-face { font-family: "Poppins"; font-style: normal; font-weight: 800; font-display: swap;
+  src: url(/threeforcefive/fonts/poppins-800.woff) format("woff"); }
+
+.f5 {
+  --f5-bg: #0a101d;         /* Midnight Bg */
+  --f5-top: #17294a;        /* Midnight BgTop */
+  --f5-panel: #142039;      /* Midnight Panel */
+  --f5-panel-hi: #1f3258;   /* Midnight PanelHi */
+  --f5-line: #2c4573;       /* Midnight Line */
+  --f5-dim: #97a8c9;        /* Midnight TextDim */
+  --f5-text: #f4f6fb;
+  --f5-pink: #fa1f7d;       /* LogoPink, the ÇEK button */
+  --f5-yellow: #fbe002;     /* LogoYellow */
+  --f5-cyan: #01dcfb;       /* LogoCyan */
+  --f5-card: #fffdf8;       /* CardFace */
+  --f5-card-edge: #e3dceb;  /* CardEdge */
+  --f5-font: "Poppins", var(--display);
+  --f5-neon: linear-gradient(135deg, var(--f5-pink), #b04cff 50%, var(--f5-cyan));
+
+  background-color: var(--f5-bg);
+  background-image:
+    radial-gradient(760px 460px at 92% -6%, rgba(1, 220, 251, 0.16), transparent 70%),
+    radial-gradient(700px 480px at -8% 70%, rgba(250, 31, 125, 0.16), transparent 70%),
+    linear-gradient(180deg, var(--f5-top) 0, var(--f5-bg) 720px);
+  background-attachment: scroll;
+  color: var(--f5-text);
+}
+html:has(> body.f5) { background: var(--f5-bg); }
+
+.f5 h1, .f5 h2, .f5 h3, .f5 .title, .f5 .g-hero .say, .f5 .kicker, .f5 .faq summary, .f5 .btn, .f5 .contact .mail {
+  font-family: var(--f5-font); letter-spacing: -0.01em;
+}
+.f5 main a { color: var(--f5-cyan); }
+.f5 main a:hover { color: var(--f5-text); }
+
+/* ------------------------------------------------------------------ hero: the game screen in its neon frame */
+
+.f5 .g-hero {
+  color: var(--f5-text);
+  border: 3px solid transparent;
+  background:
+    radial-gradient(460px 300px at 88% 8%, rgba(1, 220, 251, 0.22), transparent 70%) padding-box,
+    radial-gradient(520px 340px at 6% 96%, rgba(250, 31, 125, 0.26), transparent 70%) padding-box,
+    linear-gradient(180deg, var(--f5-top), var(--f5-bg) 85%) padding-box,
+    var(--f5-neon) border-box;
+  box-shadow: -18px 24px 70px -30px rgba(250, 31, 125, 0.7), 18px -10px 70px -30px rgba(1, 220, 251, 0.6);
+}
+/* shards like the store art's corners */
+.f5 .g-hero::before {
+  background:
+    linear-gradient(135deg, transparent 47%, rgba(250, 31, 125, 0.5) 48% 52%, transparent 53%) no-repeat 3% 8% / 70px 70px,
+    linear-gradient(60deg, transparent 46%, rgba(1, 220, 251, 0.45) 47% 53%, transparent 54%) no-repeat 47% 90% / 60px 60px,
+    linear-gradient(120deg, transparent 46%, rgba(251, 224, 2, 0.45) 47% 53%, transparent 54%) no-repeat 56% 6% / 46px 46px;
+}
+.f5 .g-hero .logo { width: min(330px, 80%); margin: 0 0 14px 0; filter: drop-shadow(0 0 26px rgba(250, 31, 125, 0.4)) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5)); }
+.f5 .g-hero .say {
+  font-weight: 800; font-size: clamp(26px, 3vw, 36px); color: #fff;
+  text-shadow: 0 0 22px rgba(255, 255, 255, 0.28), 0 3px 0 rgba(0, 0, 0, 0.35);
+}
+.f5 .g-hero .say em { font-style: normal; color: var(--f5-yellow); text-shadow: 0 0 22px rgba(251, 224, 2, 0.45), 0 3px 0 rgba(0, 0, 0, 0.35); }
+.f5 .g-hero p { color: #c9d4ea; }
+
+/* chips like the players' name tags: dark plate, a coloured dot */
+.f5 .g-hero .chips li {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--f5-panel); color: var(--f5-text); border: 1px solid var(--f5-line);
+}
+.f5 .g-hero .chips li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--f5-cyan); box-shadow: 0 0 8px var(--f5-cyan); }
+.f5 .g-hero .chips li:nth-child(2)::before { background: var(--f5-pink); box-shadow: 0 0 8px var(--f5-pink); }
+.f5 .g-hero .chips li:nth-child(3)::before { background: var(--f5-yellow); box-shadow: 0 0 8px var(--f5-yellow); }
+.f5 .store { background: #05080f; border-color: var(--f5-line); }
+
+.f5 .phone {
+  padding: 4px 4px 0; background: var(--f5-neon);
+  box-shadow: 0 -10px 60px rgba(250, 31, 125, 0.35), 0 -10px 60px rgba(1, 220, 251, 0.2);
+}
+.f5 .phone img { border-radius: 40px 40px 0 0; }
+
+/* playing cards and the gold coin floating over the hero */
+.f5 .pc {
+  position: absolute; z-index: 2; width: 48px; height: 68px; border-radius: 8px; pointer-events: none;
+  background: linear-gradient(180deg, #fff, var(--f5-card)); border: 1px solid var(--f5-card-edge);
+  box-shadow: 0 10px 18px -6px rgba(0, 0, 0, 0.6);
+  font: 800 17px/1 var(--f5-font); font-style: normal; color: var(--s);
+}
+.f5 .pc::before { content: attr(data-r); position: absolute; left: 6px; top: 6px; }
+.f5 .pc::after { content: attr(data-s); position: absolute; right: 6px; bottom: 5px; font-size: 22px; }
+.f5 .pc.p1 { --s: #e0234e; top: 30px; right: 47%; rotate: -14deg; }
+.f5 .pc.p2 { --s: #2a6be0; top: 64px; right: 40%; rotate: 9deg; }
+.f5 .coin {
+  position: absolute; z-index: 2; width: 40px; height: 40px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, transparent 54%, rgba(168, 112, 12, 0.6) 56% 61%, transparent 63%),
+    radial-gradient(circle at 34% 30%, #fff1b8 0 12%, #ffdd73 32%, #e0a526 70%, #a8700c 100%);
+  box-shadow: inset 0 -3px 0 rgba(120, 70, 0, 0.45), 0 0 18px rgba(255, 201, 60, 0.45);
+  top: 118px; right: 26px;
+}
+
+/* ------------------------------------------------------------------ section heads like the in-game tags */
+
+.f5 .kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 13px 5px 11px; border-radius: 999px; letter-spacing: 0.18em; font-size: 12px; font-weight: 800;
+  background: var(--f5-panel); color: var(--f5-cyan); border: 1px solid var(--f5-line);
+}
+html .f5 .kicker::before {
+  width: 8px !important; height: 8px; margin: 0; border-radius: 50%; transform: none;
+  background: var(--f5-cyan); box-shadow: 0 0 8px var(--f5-cyan);
+}
+.f5 .title { font-weight: 800; color: #fff; text-shadow: 0 0 26px rgba(255, 255, 255, 0.15); margin-top: 6px; }
+.f5 .lead { color: var(--f5-dim); }
+
+/* ------------------------------------------------------------------ screens */
+
+.f5 .shots { scrollbar-color: var(--f5-pink) transparent; }
+.f5 .shots img { border: 1px solid var(--f5-line); box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9); }
+
+/* ------------------------------------------------------------------ cards: game panels, icons on playing cards */
+
+.f5 .value, .f5 .faq details {
+  background: linear-gradient(180deg, var(--f5-panel-hi), var(--f5-panel) 70%);
+  border: 1px solid var(--f5-line); border-radius: 18px;
+  box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.9);
+}
+.f5 .value h3 { color: #fff; }
+.f5 .value p { color: var(--f5-dim); }
+.f5 .value .ic {
+  width: 46px; height: 60px; border-radius: 8px; color: var(--s, #e0234e);
+  background: linear-gradient(180deg, #fff, var(--f5-card)); border: 1px solid var(--f5-card-edge);
+  box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.7);
+}
+.f5 .features .value:nth-child(2) .ic { --s: #2a6be0; }
+.f5 .features .value:nth-child(3) .ic { --s: #159957; }
+.f5 .features .value:nth-child(4) .ic { --s: #1e1b2e; }
+.f5 .value:hover { background: linear-gradient(180deg, var(--f5-panel-hi), var(--f5-panel) 70%); border-color: var(--f5-cyan); box-shadow: 0 0 0 1px var(--f5-cyan), 0 0 26px -6px rgba(1, 220, 251, 0.55); }
+
+.f5 .faq details[open] { border-color: var(--f5-cyan); box-shadow: 0 0 0 1px var(--f5-cyan), 0 0 26px -10px rgba(1, 220, 251, 0.6); }
+.f5 .faq summary { font-weight: 600; color: #fff; }
+.f5 .faq summary::after {
+  flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px;
+  font: 800 20px/1 var(--f5-font); color: #fff;
+  background: linear-gradient(180deg, #ff4f97, var(--f5-pink)); box-shadow: inset 0 -2px 0 rgba(120, 0, 50, 0.45);
+}
+.f5 .faq details p { color: #c9d4ea; }
+.f5 .faq b { color: #fff; }
+
+/* ------------------------------------------------------------------ contact: a neon panel with the ÇEK button */
+
+.f5 .contact {
+  border: 3px solid transparent;
+  background:
+    radial-gradient(600px 300px at 100% 0%, rgba(1, 220, 251, 0.18), transparent 70%) padding-box,
+    radial-gradient(500px 260px at 0% 100%, rgba(250, 31, 125, 0.2), transparent 70%) padding-box,
+    linear-gradient(135deg, var(--f5-panel-hi), var(--f5-bg)) padding-box,
+    var(--f5-neon) border-box;
+}
+.f5 .contact .mail { color: #fff; text-decoration: none; }
+.f5 .contact .mail:hover { color: var(--f5-cyan); }
+.f5 .btn-hot {
+  border-radius: 16px; color: #fff; font-weight: 800; letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #ff4f97, var(--f5-pink) 60%, #d60f66);
+  box-shadow: inset 0 -4px 0 rgba(120, 0, 50, 0.4), 0 12px 30px -8px rgba(250, 31, 125, 0.7);
+}
+.f5 .btn-hot:hover { color: #fff; box-shadow: inset 0 -4px 0 rgba(120, 0, 50, 0.4), 0 16px 38px -8px rgba(250, 31, 125, 0.85); }
+
+/* ------------------------------------------------------------------ header progress and footer */
+
+.f5 .progress i { background: linear-gradient(90deg, var(--f5-pink), var(--f5-yellow), var(--f5-cyan)); }
+.f5 .progress b {
+  background: radial-gradient(circle at 34% 30%, #fff1b8 0 14%, #ffdd73 36%, #e0a526 72%, #a8700c);
+  box-shadow: 0 0 10px rgba(255, 201, 60, 0.9);
+}
+.f5 footer { border-top-color: var(--f5-line); }
+.f5 footer .wrap { color: var(--f5-dim); }
+.f5 footer a { color: #c9d4ea; }
+.f5 footer a:hover { color: var(--f5-cyan); }
+
+@media (max-width: 860px) {
+  .f5 .pc { width: 38px; height: 54px; font-size: 14px; }
+  .f5 .pc::after { font-size: 17px; }
+  .f5 .pc.p1 { top: 16px; right: 46px; }
+  .f5 .pc.p2 { top: 34px; right: 14px; }
+  .f5 .coin { display: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .f5 .pc, .f5 .coin { animation: f5-float 3.4s ease-in-out infinite alternate; }
+  .f5 .pc.p2 { animation-delay: -1.2s; }
+  .f5 .coin { animation-name: f5-spin; animation-duration: 2.6s; }
+  @keyframes f5-float { from { translate: 0 -6px; } to { translate: 0 8px; } }
+  @keyframes f5-spin { from { translate: 0 -6px; scale: 1 1; } 50% { scale: 0.25 1; } to { translate: 0 8px; scale: 1 1; } }
+}
