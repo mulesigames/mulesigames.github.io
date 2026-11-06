@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en" class="lang-en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rules · 3 Force 5</title>
+<meta name="description" content="How to play 3 Force 5: draw or stop, the dice set the Force numbers, a repeated number busts you, five different cards make FORCE 5. Power cards, last chance and a playable demo round.">
+<meta name="theme-color" content="#0a101d">
+<meta property="og:title" content="3 Force 5 · Rules">
+<meta property="og:description" content="Draw or stop. Same number twice and you bust.">
+<meta property="og:image" content="https://mulesigames.com/threeforcefive/img/splash.webp">
+<meta property="og:url" content="https://mulesigames.com/threeforcefive/rules/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/baloo2-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/threeforcefive/fonts/poppins-800.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=5">
+<link rel="stylesheet" href="/threeforcefive/f5.css?v=2">
+<link rel="stylesheet" href="/threeforcefive/rules/rules.css?v=1">
+<script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="tr"&&l!=="en")l=(navigator.language||"").toLowerCase().indexOf("tr")===0?"tr":"en";document.documentElement.className="lang-"+l;document.documentElement.lang=l})()</script>
+</head>
+<body class="f5">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Mulesi Games">
+      <img src="/assets/img/mascot.webp" alt="" width="44" height="44">
+      <span><b>mulesi<i>.</i></b><small>GAMES</small></span>
+    </a>
+    <nav class="nav">
+      <a href="/threeforcefive/">3 Force 5</a>
+      <a href="/threeforcefive/rules/" aria-current="page"><span data-l="tr">Kurallar</span><span data-l="en">Rules</span></a>
+      <a href="/threeforcefive/#support"><span data-l="tr">Destek</span><span data-l="en">Support</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language"><button data-set="tr">TR</button><button data-set="en">EN</button></div>
+  </div>
+</header>
+
+<main>
+
+<section class="r-hero">
+  <div class="wrap">
+    <a href="/threeforcefive/"><img class="logo" src="/threeforcefive/img/logo.webp" alt="3 Force 5" width="640" height="609"></a>
+    <h1><span data-l="tr">Nasıl <em>oynanır?</em></span><span data-l="en">How to <em>play</em></span></h1>
+    <p class="lead" data-l="tr">Kart çek, zarı yakala, parayı at. Aynı sayı gelirse patlarsın.</p>
+    <p class="lead" data-l="en">Draw cards, catch the dice, flip the coin. Draw the same number twice and you bust.</p>
+    <div class="r-forces">
+      <span class="r-chip"><b><span data-l="tr">Kart</span><span data-l="en">Cards</span></b><span data-l="tr">her tur taze deste + 2 joker</span><span data-l="en">a fresh deck every round + 2 jokers</span></span>
+      <span class="r-chip"><b><span data-l="tr">Zar</span><span data-l="en">Dice</span></b><span data-l="tr">iki zar, Force sayıları</span><span data-l="en">two dice, the Force numbers</span></span>
+      <span class="r-chip"><b><span data-l="tr">Para</span><span data-l="en">Coin</span></b><span data-l="tr">yazı mı tura mı</span><span data-l="en">heads or tails</span></span>
+    </div>
+    <div class="r-oneliner">
+      <div><span class="k">→</span><span data-l="tr">Sıra sende: <b>ÇEK</b> ya da <b>DUR</b>. Kartların toplamı tur puanın.</span><span data-l="en">Your turn: <b>DRAW</b> or <b>STOP</b>. Your cards add up to your round score.</span></div>
+      <div><span class="k">✖</span><span data-l="tr">Dizinde olan bir sayıyı tekrar çekersen <b style="color:var(--r-bad)">PATLARSIN</b>, o turdan 0.</span><span data-l="en">Draw a number already in your row and you <b style="color:var(--r-bad)">BUST</b>: 0 for the round.</span></div>
+      <div><span class="k">5</span><span data-l="tr">5 farklı sayıyı patlamadan diz: <b style="color:var(--r-gold)">FORCE 5!</b></span><span data-l="en">Line up 5 different numbers without busting: <b style="color:var(--r-gold)">FORCE 5!</b></span></div>
+    </div>
+    <nav class="r-toc" aria-label="Contents">
+      <a href="#round"><span data-l="tr">Tur</span><span data-l="en">The round</span></a>
+      <a href="#powers"><span data-l="tr">Güç kartları</span><span data-l="en">Power cards</span></a>
+      <a href="#order"><span data-l="tr">Çakışmalar</span><span data-l="en">Timing</span></a>
+      <a href="#score"><span data-l="tr">Puan</span><span data-l="en">Scoring</span></a>
+      <a href="#try"><span data-l="tr">Bir tur dene</span><span data-l="en">Try a round</span></a>
+    </nav>
+  </div>
+</section>
+
+<section class="r-sec" id="round">
+  <div class="wrap">
+    <span class="kicker"><span data-l="tr">Bir tur, sırasıyla</span><span data-l="en">One round, step by step</span></span>
+    <h2 class="title"><span data-l="tr">Tur nasıl oynanır</span><span data-l="en">How a round works</span></h2>
+    <div class="r-steps">
+      <article class="r-step s1">
+        <div class="num">1</div>
+        <div>
+          <h3><span data-l="tr">Zar atılır: bu turun Force sayıları</span><span data-l="en">The dice roll: this round's Force numbers</span></h3>
+          <p data-l="tr">Turu açan oyuncu iki zarı atar. Çıkan sayılardaki kartlar o tur <b>2 kat</b> puan eder (As = 1). İki zar aynı gelirse o sayı <b>3 kat</b>. Zarlar her tur değişir.</p>
+          <p data-l="en">The player who opens the round rolls two dice. Cards matching the numbers rolled score <b>double</b> this round (Ace = 1). Roll doubles and that number scores <b>triple</b>. New dice every round.</p>
+          <div class="r-ex">
+            <div class="die" role="img" aria-label="3"><i></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i></div>
+            <div class="die" role="img" aria-label="5"><i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i></div>
+            <span class="r-arrow">→</span>
+            <div class="c d x2" data-m="×2"><small>3<br>♦</small>3<span class="s">♦</span></div>
+            <span class="r-verdict gold"><span data-l="tr">3 kartı 6 eder</span><span data-l="en">a 3 is worth 6</span></span>
+          </div>
+        </div>
+      </article>
+      <article class="r-step s2">
+        <div class="num">2</div>
+        <div>
+          <h3><span data-l="tr">Sırayla: çek ya da dur</span><span data-l="en">Take turns: draw or stop</span></h3>
+          <p data-l="tr">Çektiğin sayı kartı dizine eklenir. Durursan puanın kasaya girer ve bu turu izlersin. Herkes durunca ya da patlayınca tur biter.</p>
+          <p data-l="en">A number card you draw goes into your row. Stop and your score is banked; you watch the rest of the round. The round ends when everyone has stopped or busted.</p>
+          <div class="r-ex">
+            <div class="c"><small>7<br>♠</small>7<span class="s">♠</span></div>
+            <div class="c h"><small>2<br>♥</small>2<span class="s">♥</span></div>
+            <div class="c cl"><small>9<br>♣</small>9<span class="s">♣</span></div>
+            <div class="c empty"></div><div class="c empty"></div>
+            <span class="r-verdict"><span data-l="tr">18 puan</span><span data-l="en">18 points</span></span>
+          </div>
+        </div>
+      </article>
+      <article class="r-step s3">
+        <div class="num">3</div>
+        <div>
+          <h3><span data-l="tr">Patlama ya da FORCE 5</span><span data-l="en">Bust or FORCE 5</span></h3>
+          <p data-l="tr">Dizinde zaten olan bir sayıyı ikinci kez çekersen <b>patlarsın</b> ve o turdan 0 alırsın (ama önce son şansın var). 5 farklı sayıyı patlamadan dizersen <b>FORCE 5</b>: dizi puanının yarısı kadar bonus alırsın ve tur herkes için hemen biter, diğerleri o anki puanlarını alır.</p>
+          <p data-l="en">Draw a number you already have and you <b>bust</b>: 0 for the round (but first you get a last chance). Line up 5 different numbers without busting for <b>FORCE 5</b>: a bonus of half your row score, and the round ends at once for everyone; the others keep their current score.</p>
+          <div class="r-ex">
+            <div class="c dim"><small>7<br>♠</small>7<span class="s">♠</span></div>
+            <div class="c h dim"><small>2<br>♥</small>2<span class="s">♥</span></div>
+            <div class="c cl dim"><small>9<br>♣</small>9<span class="s">♣</span></div>
+            <div class="c d bust"><small>7<br>♦</small>7<span class="s">♦</span></div>
+            <span class="r-verdict bad"><span data-l="tr">PATLADI · 0</span><span data-l="en">BUSTED · 0</span></span>
+          </div>
+        </div>
+      </article>
+      <article class="r-step s4">
+        <div class="num">4</div>
+        <div>
+          <h3><span data-l="tr">Son şans: yazı-tura</span><span data-l="en">Last chance: a coin flip</span></h3>
+          <p data-l="tr">Patladığın an para atılır, sen “yazı” ya da “tura” dersin. Bilirsen <b>iki aynı kart da atılır</b> ve <b>oyuna devam edersin</b>. Bilemezsen patlarsın. Son şans her oyuncuya <b>turda bir kez</b>: ikinci aynı sayıda direkt patlarsın. Joker'in patlattığına son şans yok, onu yalnız Kalkan kurtarır.</p>
+          <p data-l="en">The moment you bust, the coin is flipped and you call heads or tails. Call it right and <b>both matching cards are discarded</b> and <b>you keep playing</b>. Miss and you bust. Everyone gets the last chance <b>once per round</b>; the next repeat busts you straight away. A Joker bust has no last chance; only a Shield saves you.</p>
+          <div class="r-ex">
+            <div class="c"><small>7<br>♠</small>7<span class="s">♠</span></div>
+            <div class="c h"><small>2<br>♥</small>2<span class="s">♥</span></div>
+            <div class="c d bust"><small>7<br>♦</small>7<span class="s">♦</span></div>
+            <span class="r-verdict gold"><span data-l="tr">bildi → iki 7 de gider, 2 ile devam</span><span data-l="en">called it → both 7s go, play on with the 2</span></span>
+          </div>
+        </div>
+      </article>
+      <article class="r-step s5">
+        <div class="num">5</div>
+        <div>
+          <h3><span data-l="tr">Dururken yazı-tura (isteğe bağlı)</span><span data-l="en">Coin flip when you stop (optional)</span></h3>
+          <p data-l="tr">Durduğunda istersen “yazı” ya da “tura” deyip para atarsın. Bilirsen tur puanın <b>ikiye katlanır</b>, bilemezsen <b>0</b> olur. Atmak zorunda değilsin; gerideysen oyunu çevirebilir.</p>
+          <p data-l="en">When you stop you may call heads or tails and flip. Call it right and your round score <b>doubles</b>; miss and it drops to <b>0</b>. You never have to flip, but if you're behind it can turn the game.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="r-sec" id="powers">
+  <div class="wrap">
+    <span class="kicker">J · Q · K · Joker</span>
+    <h2 class="title"><span data-l="tr">Güç kartları</span><span data-l="en">Power cards</span></h2>
+    <p class="lead" data-l="tr">Resimli kartlar ve jokerler diziye girmez, çekildiği an etkisini gösterir.</p>
+    <p class="lead" data-l="en">Face cards and jokers never go into your row; they take effect the moment they are drawn.</p>
+    <div class="r-powers">
+      <article class="r-power">
+        <div class="c p pj"><small>J</small>⛊<span class="lbl"><span data-l="tr">KALKAN</span><span data-l="en">SHIELD</span></span></div>
+        <div><h3 class="t-j"><span data-l="tr">Kalkan</span><span data-l="en">Shield</span></h3>
+          <p data-l="tr"><b>Bir patlamayı engeller.</b> Elinde en çok bir Kalkan durur; ikincisi boşa gider.</p>
+          <p data-l="en"><b>Blocks one bust.</b> You can hold only one Shield; a second one is wasted.</p></div>
+      </article>
+      <article class="r-power">
+        <div class="c p pq"><small>Q</small>➜<span class="lbl"><span data-l="tr">YOLLA</span><span data-l="en">SEND</span></span></div>
+        <div><h3 class="t-q"><span data-l="tr">Yolla</span><span data-l="en">Send</span></h3>
+          <p data-l="tr">Dizinden <b>bir kartı rakibe at</b>. O sayı rakipte varsa rakip patlar. Dikkat: rakibi 5 karta tamamlarsan FORCE 5 ona gider.</p>
+          <p data-l="en"><b>Send a card from your row to a rival.</b> If they already have that number, they bust. Careful: fill their row to 5 and the FORCE 5 is theirs.</p></div>
+      </article>
+      <article class="r-power">
+        <div class="c p pk"><small>K</small>⚡<span class="lbl"><span data-l="tr">ZORLA</span><span data-l="en">DRAW 2</span></span></div>
+        <div><h3 class="t-k"><span data-l="tr">Zorla</span><span data-l="en">Draw 2</span></h3>
+          <p data-l="tr">Seçtiğin rakip <b>hemen 2 kart çeker</b>. Oyunda başka kimse kalmadıysa sen çekersin.</p>
+          <p data-l="en">The rival you pick <b>draws 2 cards right away</b>. If nobody else is still in the round, you draw them.</p></div>
+      </article>
+      <article class="r-power">
+        <div class="c p px"><small>★</small>☠<span class="lbl">JOKER</span></div>
+        <div><h3 class="t-x"><span data-l="tr">Joker · herkese yolla</span><span data-l="en">Joker · send to all</span></h3>
+          <p data-l="tr">Destede 2 tane. Dizinden bir sayı seç, kart sende kalır. O sayı <b>kimde varsa patlar</b>, kasaya atıp durmuş olsa bile. Kimde yoksa zorla 1 kart çeker (durmuş olan çekmez). Kalkan korur. Dizin boşsa herkes 1 kart çeker.</p>
+          <p data-l="en">Two in the deck. Pick a number from your row; your card stays. <b>Everyone holding that number busts</b>, even players who already stopped. Anyone without it must draw 1 card (stopped players don't). A Shield protects. If your row is empty, everyone draws 1.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="r-sec" id="order">
+  <div class="wrap">
+    <span class="kicker"><span data-l="tr">Kim, ne zaman, hangi sırayla</span><span data-l="en">Who, when, in what order</span></span>
+    <h2 class="title"><span data-l="tr">Çakışmalar ve işlem sırası</span><span data-l="en">Timing and clashes</span></h2>
+    <p class="lead" data-l="tr">Birden çok kart aynı anda devreye girince oyun hep bu kurallara göre ilerler.</p>
+    <p class="lead" data-l="en">When several cards kick in at once, the game always follows these rules.</p>
+    <div class="r-clashes">
+      <article class="r-clash">
+        <h3><span data-l="tr">İşlem sırası</span><span data-l="en">Order of play</span></h3>
+        <ol data-l="tr">
+          <li>Sıra sende: <b>1 kart çekersin ya da durursun</b>. Kart ve yol açtığı her şey bitince sıra soldaki oyuncuya geçer.</li>
+          <li>K ya da Joker yüzünden çekilen kartlar <b>sırayı değiştirmez</b>; çekişler bitince sıra yine turu oynayanın solundakine geçer.</li>
+          <li>Zorunlu çekişte gelen Q, K ya da Joker'i o oyuncu kullanır, ama <b>çekişleri bittikten sonra</b>. Zincir olabilir.</li>
+        </ol>
+        <ol data-l="en">
+          <li>On your turn you <b>draw 1 card or stop</b>. Once the card and everything it causes is done, play passes to the left.</li>
+          <li>Cards drawn because of a K or a Joker <b>don't change the turn order</b>; afterwards play still passes to the left of whoever took the turn.</li>
+          <li>A Q, K or Joker drawn in a forced draw is used by that player, but <b>only after their draws are done</b>. Chains can happen.</li>
+        </ol>
+      </article>
+      <article class="r-clash">
+        <h3><span data-l="tr">Dizin boşken</span><span data-l="en">With an empty row</span></h3>
+        <ol data-l="tr">
+          <li><b>Q:</b> yollayacak kart yok, etkisiz.</li>
+          <li><b>K:</b> normal çalışır, rakip 2 kart çeker.</li>
+          <li><b>Joker:</b> sayı söyleyemezsin, bütün aktif rakipler 1'er kart çeker.</li>
+          <li><b>J:</b> Kalkan olur.</li>
+        </ol>
+        <ol data-l="en">
+          <li><b>Q:</b> nothing to send, no effect.</li>
+          <li><b>K:</b> works as usual, the rival draws 2.</li>
+          <li><b>Joker:</b> no number to call, every active rival draws 1.</li>
+          <li><b>J:</b> becomes your Shield.</li>
+        </ol>
+      </article>
+      <article class="r-clash">
+        <h3><span data-l="tr">Zorla çekilen kartlar</span><span data-l="en">Forced draws</span></h3>
+        <ol data-l="tr">
+          <li>K'nin 2 kartı <b>sırayla</b> çekilir: ilkinde patlayan ikinciyi çekmez; ilki J ise ikinciye karşı korur.</li>
+          <li>Son şansı bilen, kalan zorunlu kartları <b>çekmeye devam eder</b>.</li>
+          <li>Joker: önce herkesin dizisine bakılır, sayı kimde varsa patlar (Kalkanı olanın Kalkanı gider). Sonra sayısı olmayan aktif rakipler, Joker'i atanın solundan başlayarak 1'er kart çeker.</li>
+          <li>Q yalnız oyundaki rakibe yollanır; durmuş oyuncuyu <b>yalnız Joker</b> vurur.</li>
+          <li>Zorla gelen kart 5. kartı tamamlarsa FORCE 5 o oyuncunun olur.</li>
+        </ol>
+        <ol data-l="en">
+          <li>The K's 2 cards are drawn <b>one at a time</b>: bust on the first and you skip the second; if the first is a J it protects you from the second.</li>
+          <li>Win the last-chance flip and you <b>keep drawing</b> the rest of the forced cards.</li>
+          <li>Joker: first every row is checked and whoever holds the number busts (a Shield is used up instead). Then active rivals without it draw 1 each, starting left of the Joker player.</li>
+          <li>A Q can only be sent to a rival still in the round; <b>only the Joker</b> hits players who stopped.</li>
+          <li>If a forced card completes someone's fifth card, the FORCE 5 is theirs.</li>
+        </ol>
+      </article>
+      <article class="r-clash">
+        <h3><span data-l="tr">Kalkan, son şans, patlama</span><span data-l="en">Shield, last chance, bust</span></h3>
+        <ol data-l="tr">
+          <li>Aynı sayı gelince <b>önce Kalkan</b> kullanılır (saklanamaz). Kalkan yoksa son şans gelir.</li>
+          <li>Son şans normal çekişte, yollanan kartta, K'de ve Joker'in çektirdiği kartta geçerli; turda bir kez.</li>
+          <li>Patlayanın bekleyen her şeyi yanar, <b>kullanılmamış Q/K/Joker'i de</b>.</li>
+          <li><b>FORCE 5</b> olunca tur anında biter, bekleyen her şey (başkalarının zorunlu çekişleri dahil) iptal olur. Patlamamış herkes o anki puanını alır.</li>
+        </ol>
+        <ol data-l="en">
+          <li>On a repeat number <b>the Shield goes first</b> (you can't save it). No Shield, then the last chance.</li>
+          <li>The last chance works on normal draws, sent cards, K draws and Joker draws; once per round.</li>
+          <li>Whoever busts loses everything pending, <b>unused Q/K/Joker cards too</b>.</li>
+          <li>On <b>FORCE 5</b> the round ends at once and everything pending is cancelled (other players' forced draws too). Everyone who hasn't busted keeps their current score.</li>
+        </ol>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="r-sec" id="score">
+  <div class="wrap">
+    <span class="kicker"><span data-l="tr">Puan</span><span data-l="en">Scoring</span></span>
+    <h2 class="title"><span data-l="tr">Bir FORCE 5 örneği</span><span data-l="en">A FORCE 5 example</span></h2>
+    <div class="r-calc">
+      <p data-l="tr">Zarlar <b>A</b> ve <b>2</b> geldi. Dizi: A♠ 2♥ 7♣ 9♦ 10♠, patlamadan beş kart.</p>
+      <p data-l="en">The dice show <b>A</b> and <b>2</b>. Row: A♠ 2♥ 7♣ 9♦ 10♠, five cards without busting.</p>
+      <div class="r-row" aria-hidden="true">
+        <div class="c x2" data-m="×2"><small>A<br>♠</small>A<span class="s">♠</span></div>
+        <div class="c h x2" data-m="×2"><small>2<br>♥</small>2<span class="s">♥</span></div>
+        <div class="c cl"><small>7<br>♣</small>7<span class="s">♣</span></div>
+        <div class="c d"><small>9<br>♦</small>9<span class="s">♦</span></div>
+        <div class="c"><small>10<br>♠</small>10<span class="s">♠</span></div>
+      </div>
+      <table>
+        <tr><td>A♠ × 2 (Force)</td><td>2</td></tr>
+        <tr><td>2♥ × 2 (Force)</td><td>4</td></tr>
+        <tr><td>7♣ + 9♦ + 10♠</td><td>26</td></tr>
+        <tr><td><span data-l="tr">FORCE 5 bonusu (32'nin yarısı)</span><span data-l="en">FORCE 5 bonus (half of 32)</span></td><td>+16</td></tr>
+        <tr class="total"><td><span data-l="tr">Tur puanı</span><span data-l="en">Round score</span></td><td>48</td></tr>
+      </table>
+    </div>
+    <div class="r-facts">
+      <div class="r-fact"><b><span data-l="tr">3 ya da 5 tur</span><span data-l="en">3 or 5 rounds</span></b><span data-l="tr">Maçtan önce seçilir; rastgele online masalar 3 tur. En yüksek toplam kazanır, eşitlikte uzatma turu oynanır.</span><span data-l="en">Chosen before the match; random online tables play 3. Highest total wins; a tie means an extra round.</span></div>
+      <div class="r-fact"><b><span data-l="tr">Turu kim açar?</span><span data-l="en">Who opens a round?</span></b><span data-l="tr">İlk turu rastgele biri, sonrakileri toplamı en düşük olan.</span><span data-l="en">A random player opens the first round, then whoever has the lowest total.</span></div>
+      <div class="r-fact"><b><span data-l="tr">2–4 oyuncu</span><span data-l="en">2–4 players</span></b><span data-l="tr">Yapay zekâya karşı, aynı telefonda, aynı Wi-Fi'da ya da online.</span><span data-l="en">Against the AI, on one phone, on the same Wi-Fi or online.</span></div>
+      <div class="r-fact"><b><span data-l="tr">Risk göstergesi</span><span data-l="en">Bust risk meter</span></b><span data-l="tr">Sıradaki kartla patlama olasılığı, destede kalan kartlardan hesaplanır.</span><span data-l="en">Your chance of busting on the next card, worked out from the cards left in the deck.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="r-sec" id="try">
+  <div class="wrap">
+    <span class="kicker"><span data-l="tr">Tek kişilik deneme</span><span data-l="en">Solo practice</span></span>
+    <h2 class="title"><span data-l="tr">Bir tur dene</span><span data-l="en">Try a round</span></h2>
+    <p class="lead" data-l="tr">Güç kartları ve son şans olmadan, yalnız sayılarla: ne zaman durmalısın?</p>
+    <p class="lead" data-l="en">Numbers only, no power cards or last chance: when should you stop?</p>
+    <div class="r-play">
+      <div class="r-playhead">
+        <div class="r-forcebox"><span id="dA" class="die" aria-hidden="true"></span><span id="dB" class="die" aria-hidden="true"></span><span id="ftext"></span></div>
+        <div class="r-score"><span id="pts">0</span><small><span data-l="tr">tur puanı</span><span data-l="en">round score</span></small></div>
+      </div>
+      <div class="r-slots" id="slots" aria-live="polite"></div>
+      <div class="r-risk"><span id="risktext"></span><span class="r-bar"><i id="riskbar"></i></span></div>
+      <div class="r-status" id="status" aria-live="polite"></div>
+      <div class="r-btns">
+        <button id="draw" type="button"><span data-l="tr">ÇEK</span><span data-l="en">DRAW</span></button>
+        <button id="stop" type="button" class="alt"><span data-l="tr">DUR</span><span data-l="en">STOP</span></button>
+        <button id="coin" type="button" class="gold" hidden><span data-l="tr">Yazı-tura: ×2 ya da 0</span><span data-l="en">Flip: ×2 or 0</span></button>
+        <button id="again" type="button" class="ghost" hidden><span data-l="tr">Yeni tur</span><span data-l="en">New round</span></button>
+      </div>
+    </div>
+    <p class="r-note" data-l="tr">Deneme 40 sayı kartıyla oynanır (A–10). Oyunda deste 54 kart: 52 kart ve 2 joker; resimli kartlar güç kartıdır.</p>
+    <p class="r-note" data-l="en">The demo uses the 40 number cards (A–10). The real deck has 54 cards: 52 plus 2 jokers, and face cards are power cards.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Mulesi Games</span>
+    <div class="links">
+      <a href="/threeforcefive/">3 Force 5</a>
+      <a href="/threeforcefive/privacy/"><span data-l="tr">Gizlilik Politikası</span><span data-l="en">Privacy Policy</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=4" defer></script>
+<script>
+// Demo round: number cards only (A-10 in four suits), two Force dice, draw/stop, optional coin flip on stop.
+(function () {
+  var PIPS = { 1: [4], 2: [2, 6], 3: [2, 4, 6], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] };
+  var SUITS = [["♠", ""], ["♥", "h"], ["♦", "d"], ["♣", "cl"]];
+  var $ = function (id) { return document.getElementById(id); };
+  var t = function (tr, en) { return '<span data-l="tr">' + tr + '</span><span data-l="en">' + en + "</span>"; };
+  var deck, row, a, b, over;
+
+  function die(el, n) {
+    el.innerHTML = "";
+    for (var i = 0; i < 9; i++) { var p = document.createElement("i"); if (PIPS[n].indexOf(i) >= 0) p.className = "on"; el.appendChild(p); }
+  }
+  function rankText(r) { return r === 1 ? "A" : String(r); }
+  function mult(r) { return r === a && r === b ? 3 : r === a || r === b ? 2 : 1; }
+  function score() { return row.reduce(function (s, c) { return s + c.r * mult(c.r); }, 0); }
+  function bonus() { return Math.ceil(score() / 2); }
+
+  function cardEl(c, extra) {
+    var d = document.createElement("div"), m = mult(c.r);
+    d.className = "c flip " + SUITS[c.s][1] + (m > 1 ? " x2" : "") + (extra ? " " + extra : "");
+    if (m > 1) d.setAttribute("data-m", "×" + m);
+    d.innerHTML = "<small>" + rankText(c.r) + "<br>" + SUITS[c.s][0] + "</small>" + rankText(c.r) + '<span class="s">' + SUITS[c.s][0] + "</span>";
+    return d;
+  }
+
+  function render(bustCard) {
+    var slots = $("slots");
+    slots.innerHTML = "";
+    row.forEach(function (c) { slots.appendChild(cardEl(c, bustCard ? "dim" : "")); });
+    if (bustCard) slots.appendChild(cardEl(bustCard, "bust"));
+    for (var i = row.length + (bustCard ? 1 : 0); i < 5; i++) { var e = document.createElement("div"); e.className = "c empty"; slots.appendChild(e); }
+    $("pts").textContent = bustCard ? 0 : score() + (row.length === 5 ? bonus() : 0);
+    var risk = over ? 0 : deck.filter(function (c) { return row.some(function (x) { return x.r === c.r; }); }).length / deck.length;
+    var pct = Math.round(risk * 100);
+    $("risktext").innerHTML = t("Patlama riski %" + pct, "Bust risk " + pct + "%");
+    var bar = $("riskbar");
+    bar.style.width = Math.max(2, risk * 100) + "%";
+    bar.style.background = risk < 0.2 ? "var(--r-good)" : risk < 0.4 ? "var(--r-gold)" : "var(--r-bad)";
+  }
+
+  function say(html, cls) { $("status").innerHTML = '<span class="r-verdict ' + (cls || "") + '">' + html + "</span>"; }
+
+  function finish(html, cls, canCoin) {
+    over = true;
+    say(html, cls);
+    $("draw").disabled = $("stop").disabled = true;
+    $("coin").hidden = !canCoin;
+    $("again").hidden = false;
+    render();
+  }
+
+  function newRound() {
+    deck = [];
+    for (var s = 0; s < 4; s++) for (var r = 1; r <= 10; r++) deck.push({ r: r, s: s });
+    row = []; over = false;
+    a = 1 + Math.floor(Math.random() * 6); b = 1 + Math.floor(Math.random() * 6);
+    die($("dA"), a); die($("dB"), b);
+    $("ftext").innerHTML = a === b
+      ? t("FORCE " + rankText(a) + "'ler ×3", "FORCE " + rankText(a) + "s ×3")
+      : t("FORCE " + rankText(a) + " ve " + rankText(b) + " ×2", "FORCE " + rankText(a) + " and " + rankText(b) + " ×2");
+    $("status").innerHTML = "";
+    $("draw").disabled = $("stop").disabled = false;
+    $("coin").hidden = $("again").hidden = true;
+    render();
+  }
+
+  $("draw").addEventListener("click", function () {
+    if (over) return;
+    var c = deck.splice(Math.floor(Math.random() * deck.length), 1)[0];
+    if (row.some(function (x) { return x.r === c.r; })) {
+      over = true;
+      render(c);
+      var n = rankText(c.r);
+      say(t("PATLADI! Dizinde zaten " + n + " vardı · 0 puan", "BUSTED! You already had a " + n + " · 0 points"), "bad");
+      $("draw").disabled = $("stop").disabled = true;
+      $("again").hidden = false;
+      return;
+    }
+    row.push(c);
+    if (row.length === 5) {
+      var tot = score() + bonus();
+      finish(t("FORCE 5! +" + bonus() + " bonus · " + tot + " puan", "FORCE 5! +" + bonus() + " bonus · " + tot + " points"), "gold", false);
+      return;
+    }
+    render();
+  });
+  $("stop").addEventListener("click", function () {
+    if (over) return;
+    var s = score();
+    finish(t("Durdun · " + s + " puan kasada", "You stopped · " + s + " points banked"), "", s > 0);
+  });
+  $("coin").addEventListener("click", function () {
+    var win = Math.random() < 0.5, s = score();
+    $("coin").hidden = true;
+    if (win) say(t("Bildin! " + s + " → " + s * 2, "Called it! " + s + " → " + s * 2), "gold");
+    else say(t("Bilemedin… " + s + " → 0", "Missed… " + s + " → 0"), "bad");
+    $("pts").textContent = win ? s * 2 : 0;
+  });
+  $("again").addEventListener("click", newRound);
+  newRound();
+})();
+</script>
+</body>
+</html>

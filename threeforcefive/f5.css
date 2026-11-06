@@ -197,3 +197,7 @@ html .f5 .kicker::before {
   @keyframes f5-float { from { translate: 0 -6px; } to { translate: 0 8px; } }
   @keyframes f5-spin { from { translate: 0 -6px; scale: 1 1; } 50% { scale: 0.25 1; } to { translate: 0 8px; scale: 1 1; } }
 }
+
+/* link to the rules page under "What's inside" */
+.f5 .more { margin: 28px 0 0; text-align: center; }
+.f5 .more .btn-hot { display: inline-flex; color: #fff; text-decoration: none; }
