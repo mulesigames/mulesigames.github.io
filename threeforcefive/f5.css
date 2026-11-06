@@ -231,3 +231,28 @@ html .f5 .kicker::before {
 .f5 .legal p, .f5 .legal li { color: #c9d4ea; line-height: 1.7; }
 .f5 .legal b, .f5 .legal strong { color: #fff; }
 .f5 .legal a { color: var(--f5-cyan); }
+
+/* ------------------------------------------------------------------ header: the game's midnight bar with a neon underline,
+   the studio's standard logo (as on the home page), pink language switch, current page in cyan */
+
+.f5 .top {
+  background: linear-gradient(180deg, rgba(10, 16, 29, 0.94), rgba(10, 16, 29, 0.78));
+  border-bottom: 0;
+}
+.f5 .top::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--f5-pink) 20%, #b04cff 50%, var(--f5-cyan) 80%, transparent);
+  opacity: 0.7;
+}
+.f5 .top.scrolled { background: rgba(10, 16, 29, 0.96); }
+.f5 .brand img.mark { width: 46px; height: 51px; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5)); }
+.f5 .top.scrolled .brand img.mark { width: 40px; height: 44px; transform: none; }
+.f5 .nav a { font-family: var(--f5-font); font-weight: 600; color: var(--f5-dim); }
+.f5 .nav a:hover { color: #fff; }
+.f5 .nav a[aria-current="page"] { color: var(--f5-cyan); }
+.f5 .lang { background: var(--f5-panel); border-color: var(--f5-line); }
+.f5 .lang button { color: var(--f5-dim); font-family: var(--f5-font); }
+.lang-tr .f5 .lang [data-set="tr"], .lang-en .f5 .lang [data-set="en"] {
+  background: linear-gradient(180deg, #ff4f97, var(--f5-pink)); color: #fff; box-shadow: 0 0 12px -2px rgba(250, 31, 125, 0.7);
+}
+@media (max-width: 860px) { .f5 .brand img.mark { width: 40px; height: 44px; } }
