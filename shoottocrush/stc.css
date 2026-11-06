@@ -48,6 +48,9 @@ a { color: var(--orange-2); }
   background: linear-gradient(180deg, rgba(18, 48, 126, 0.96), rgba(14, 39, 102, 0.88));
   border-bottom: 3px solid var(--blue-edge);
 }
+.brand img.mark { width: 46px; height: 51px; filter: drop-shadow(0 3px 0 rgba(6, 22, 70, 0.6)); }
+.top.scrolled .brand img.mark { width: 40px; height: 44px; transform: none; }
+@media (max-width: 860px) { .brand img.mark { width: 40px; height: 44px; } }
 .nav a { color: var(--muted); font-weight: 800; }
 .nav a:hover { color: #fff; }
 .lang { background: rgba(0, 0, 0, 0.18); border: 2px solid var(--blue-edge); }
