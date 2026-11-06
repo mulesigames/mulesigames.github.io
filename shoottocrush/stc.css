@@ -164,3 +164,22 @@ footer {
 footer .wrap { color: #eaffe0; }
 footer a { color: #fff; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
 footer a:hover { color: var(--orange-2); }
+
+/* ------------------------------------------------------------------ gizlilik sayfası: metin krem pencerede */
+
+.legal {
+  margin-top: 36px; margin-bottom: 24px; padding: 40px 44px 30px;
+  background: var(--panel); color: var(--navy);
+  border: 4px solid var(--blue); border-radius: 30px;
+  box-shadow: 0 0 0 4px var(--blue-edge), 0 12px 0 4px rgba(6, 22, 70, 0.55);
+}
+.legal h1 { color: var(--navy); letter-spacing: 0; }
+.legal h2 { color: var(--blue-2); }
+.legal p, .legal li { color: var(--navy-2); }
+.legal b, .legal strong { color: var(--navy); }
+.legal .muted { color: #5a6684; }
+.legal a { color: var(--blue-2); font-weight: 800; }
+.legal a:hover { color: var(--navy); }
+@media (max-width: 600px) {
+  .legal { padding: 28px 20px 18px; border-radius: 24px; margin-top: 24px; }
+}
