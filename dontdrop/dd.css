@@ -182,3 +182,27 @@ html:has(> body.dd) { background: linear-gradient(180deg, #0a0604 50%, #4e9c24 5
   .dd .coin.c3 { animation-delay: -2.2s; }
   @keyframes dd-float { from { transform: translateY(-6px) rotate(-8deg); } to { transform: translateY(8px) rotate(8deg); } }
 }
+
+/* ------------------------------------------------------------------ privacy page: one readable cream panel, like the game's cards */
+
+.dd .legal-logo { display: block; width: min(240px, 60%); margin: 34px auto -6px; filter: drop-shadow(0 12px 18px rgba(10, 50, 20, 0.3)); }
+.dd .legal {
+  max-width: 860px; margin-top: 18px; padding: 40px 52px 44px; border-radius: 34px;
+  background: linear-gradient(180deg, #fffefb, var(--dd-card) 40%, #f6f1e6);
+  border: 6px solid var(--dd-cream);
+  box-shadow: 0 0 0 3px var(--dd-out), 0 30px 70px -30px rgba(10, 50, 20, 0.55);
+}
+.dd .legal h1 { color: var(--dd-out); }
+.dd .legal h2 { color: var(--dd-out); display: flex; align-items: center; gap: 10px; }
+.dd .legal h2::before {
+  content: ""; flex: none; width: 14px; height: 14px; border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 26%, #1d1d1f 30% 54%, #fff 58%);
+  box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.25);
+}
+.dd .legal p, .dd .legal li { color: var(--dd-ink); }
+.dd .legal b { color: var(--dd-out); }
+.dd .legal .muted { color: var(--dd-ink-soft); }
+
+@media (max-width: 600px) {
+  .dd .legal { padding: 28px 20px 30px; border-radius: 26px; }
+}
