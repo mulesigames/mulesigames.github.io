@@ -1,7 +1,8 @@
 /* Don't Drop the Ball! page in the game's own look: sky and clouds, grass hills, cream candy cards,
    glossy green buttons, gold coins. Colours come from the game's UI (UIManager, UiArt) and its store
    art (Store/Screenshots/frame.py); headings in Baloo 2 like the store captions, text in Nunito like the
-   game's UI. The studio header stays as on every page. Loaded after site.css, scoped to body.dd. */
+   game's UI. The header is a green candy bar with the Mulesi logo as on the home page. Loaded after site.css,
+   scoped to body.dd. */
 
 .dd {
   --dd-ink: #3d424a;        /* UIManager.Ink */
@@ -25,8 +26,8 @@
   color: var(--dd-ink);
 }
 
-/* past the footer (short pages, overscroll) the grass goes on; above the header, the studio's dark */
-html:has(> body.dd) { background: linear-gradient(180deg, #0a0604 50%, #4e9c24 50%); }
+/* past the footer (short pages, overscroll) the grass goes on; above the header, its green */
+html:has(> body.dd) { background: linear-gradient(180deg, #4fae18 50%, #4e9c24 50%); }
 
 /* clouds behind everything */
 .dd::before {
@@ -161,9 +162,28 @@ html:has(> body.dd) { background: linear-gradient(180deg, #0a0604 50%, #4e9c24 5
 .dd footer a { color: var(--dd-cream); }
 .dd footer a:hover { color: #fff; }
 
-/* ------------------------------------------------------------------ header progress: a green line with the game's ball */
+/* ------------------------------------------------------------------ header: a glossy green bar like the game's buttons */
 
-.dd .progress i { background: linear-gradient(90deg, var(--dd-green), #6cc11f, var(--dd-leaf)); }
+.dd .top, .dd .top.scrolled {
+  background: radial-gradient(60% 120% at 50% 0%, rgba(255, 255, 255, 0.28), transparent 70%),
+    linear-gradient(180deg, #8fd83a, #4fae18 60%, #3b9310);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  border-bottom: 3px solid var(--dd-rim);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.35), 0 4px 0 rgba(26, 92, 5, 0.18);
+}
+.dd .top.scrolled { box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.35), 0 10px 24px -10px rgba(10, 50, 20, 0.55); }
+/* the Mulesi logo as docked on the home page */
+.dd .brand img.mark { width: 46px; height: 51px; filter: drop-shadow(0 3px 0 rgba(26, 92, 5, 0.55)); }
+.dd .top.scrolled .brand img.mark { width: 40px; height: 44px; transform: none; }
+.dd .nav a { color: #fff; font-family: var(--display); font-weight: 800; font-size: 16px; text-shadow: 0 2px 0 var(--dd-rim); }
+.dd .nav a:hover { color: var(--dd-gold); }
+.dd .lang { background: rgba(20, 90, 5, 0.35); border: 2px solid var(--dd-rim); }
+.dd .lang button { color: #eaffd0; }
+.lang-tr .dd .lang [data-set="tr"], .lang-en .dd .lang [data-set="en"] { background: var(--dd-cream); color: var(--dd-rim); box-shadow: 0 2px 0 var(--dd-rim); }
+
+/* scroll progress: a gold line with the game's ball */
+.dd .progress { bottom: -3px; }
+.dd .progress i { background: linear-gradient(90deg, var(--dd-gold-dark), var(--dd-gold), #fff3b8); }
 .dd .progress b {
   background: radial-gradient(circle, #fff 0 26%, #1d1d1f 30% 52%, #fff 56%);
   box-shadow: 0 0 10px rgba(173, 242, 56, 0.9);
@@ -204,5 +224,6 @@ html:has(> body.dd) { background: linear-gradient(180deg, #0a0604 50%, #4e9c24 5
 .dd .legal .muted { color: var(--dd-ink-soft); }
 
 @media (max-width: 600px) {
+  .dd .brand img.mark { width: 40px; height: 44px; }
   .dd .legal { padding: 28px 20px 30px; border-radius: 26px; }
 }
