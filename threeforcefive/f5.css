@@ -201,3 +201,33 @@ html .f5 .kicker::before {
 /* link to the rules page under "What's inside" */
 .f5 .more { margin: 28px 0 0; text-align: center; }
 .f5 .more .btn-hot { display: inline-flex; color: #fff; text-decoration: none; }
+
+/* ------------------------------------------------------------------ privacy page: the text in a neon-framed game panel */
+
+.f5 .legal { max-width: 820px; padding-top: 36px; padding-bottom: 56px; }
+.f5 .legal-logo { display: block; width: min(150px, 40%); margin: 0 auto 18px; }
+.f5 .legal-logo img { width: 100%; height: auto; filter: drop-shadow(0 0 22px rgba(250, 31, 125, 0.4)); }
+.f5 .legal article {
+  border: 3px solid transparent; border-radius: 24px; padding: 30px clamp(18px, 4vw, 40px) 26px;
+  background:
+    radial-gradient(520px 260px at 100% 0%, rgba(1, 220, 251, 0.12), transparent 70%) padding-box,
+    radial-gradient(520px 260px at 0% 100%, rgba(250, 31, 125, 0.12), transparent 70%) padding-box,
+    linear-gradient(180deg, var(--f5-panel-hi), var(--f5-panel) 40%, var(--f5-bg)) padding-box,
+    var(--f5-neon) border-box;
+  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.9);
+}
+.f5 .legal h1 { font-weight: 800; color: #fff; text-align: center; text-wrap: balance; text-shadow: 0 0 26px rgba(255, 255, 255, 0.15); }
+.f5 .legal .muted {
+  display: table; margin: 4px auto 22px; padding: 4px 12px; border-radius: 999px;
+  background: var(--f5-bg); border: 1px solid var(--f5-line); color: var(--f5-dim); font-size: 13px;
+}
+.f5 .legal h2 {
+  display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 800; font-size: 20px;
+  margin: 26px 0 8px; padding-top: 20px; border-top: 1px solid var(--f5-line);
+}
+.f5 .legal h2::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--f5-cyan); box-shadow: 0 0 10px var(--f5-cyan); }
+.f5 .legal h2:nth-of-type(3n+2)::before { background: var(--f5-pink); box-shadow: 0 0 10px var(--f5-pink); }
+.f5 .legal h2:nth-of-type(3n)::before { background: var(--f5-yellow); box-shadow: 0 0 10px var(--f5-yellow); }
+.f5 .legal p, .f5 .legal li { color: #c9d4ea; line-height: 1.7; }
+.f5 .legal b, .f5 .legal strong { color: #fff; }
+.f5 .legal a { color: var(--f5-cyan); }
